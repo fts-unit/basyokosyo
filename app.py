@@ -13,7 +13,7 @@ def test_index():
     return render_template('index.html')
 
 # 投稿機能（sasaさん担当）
-
+@app.route("index.html")
 
 
 # 一覧・検索機能（Takkaさん担当）
