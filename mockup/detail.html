@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/SimpleReset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <script src="js/script.js"></script>
+    <title>タイトル</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">Logo</a></div>
+        <ul class="menu">
+            <li><a href="add.html">情報提供</a></li>
+        </ul>
+    </header>
+    
+    <div class="detail-container">
+        <h2>空き情報詳細を確認 ／ 予約済みを報告する</h2>
+        <br>
+        <p>施設名　　　：　サンポートホール高松　第一リハーサル室</p>
+        <p>空き日時　　：　2022/12/17　11時～13時</p>
+        <p>収容人数　　：　</p>
+        <p>料金　　　　：　2710円／時間</p>
+        <p>情報提供日　：　2022/12/07</p>
+        <form action="search.html">
+            <p>メモ（予約する場合はお礼を追記しましょう♪）</p>
+            <textarea name="memo" id="edit-memo">トイレの調子が悪いです。</textarea>
+            <br>
+            <strong>予約済みを報告する場合はチェック→</strong><input type="checkbox" name="done" id="edit-done" value="done">
+            <input type="submit" value="送信" class="add-btn">
+        </form>
+    </div>
+
+    <footer>
+        <div class="notice">
+            <p>※当サイトはユーザーの情報提供により空き情報を把握しております。</p>
+            <p>　情報の更新には誤差もありますので、最新の空き情報は各施設にお問い合わせください。</p>
+        </div>
+        <div class="copy">
+            &copy;SUNABACO
+        </div>
+    </footer>
+</body>
+</html>

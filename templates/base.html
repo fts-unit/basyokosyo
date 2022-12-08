@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/SimpleReset.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>タイトル</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">Logo</a></div>
+        <ul class="menu">
+            <li><a href="add.html">情報提供</a></li>
+        </ul>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="notice">
+            <p>※当サイトはユーザーの情報提供により空き情報を把握しております。</p>
+            <p>　情報の更新には誤差もありますので、最新の空き情報は各施設にお問い合わせください。</p>
+        </div>
+        <div class="copy">
+            &copy;SUNABACO
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" ></script>
+</html>

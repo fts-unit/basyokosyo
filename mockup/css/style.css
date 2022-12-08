@@ -1,0 +1,196 @@
+body {
+	font-family: "M PLUS 1p", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", "Meiryo", "HGPｺﾞｼｯｸM", "Osaka", "ＭＳ Ｐゴシック", sans-serif, Century Gothic, Arial;
+    background-color:#F0F8FF;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ヘッダー */
+header {
+    top: 0px;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: #89B0D5;
+    color: aliceblue;
+}
+.logo {
+    float: left;
+    margin-left: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.menu {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+/* トップページ冒頭 */
+.sec-search {
+    margin-top: 60px;
+    padding-top: 100px;
+    height: 500px;
+    background-image: url("../img/cover.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px #333333;
+}
+.search-container {
+    margin: 0 auto;
+    padding: 20px;
+    width: fit-content;
+    align-items: center;
+}
+.search-form-container {
+    width: fit-content;
+    height: fit-content;
+    margin: 30px auto;
+}
+.search-form-container p {
+    font-size: 18px;
+}
+.form-left {
+    float: left;
+}
+.form-right {
+    float: left;
+    margin-left: 10px;
+}
+input[type="text"], select{
+    padding: 5px;
+    border: none;
+    box-shadow: 2px 2px 4px #000;
+}
+#search-date {
+    margin-top: 1px;
+}
+#search-time {
+    width: 4em;
+}
+input[type="submit"] {
+    margin-left: 10px;
+    padding: 5px;
+    width: 5em;
+    color: white;
+    background-color: #007DC5;
+    border: 2px solid #007DC5;
+    box-shadow: 2px 2px 4px #000;
+}
+input[type="submit"]:hover {
+    color: #007DC5;
+    background-color: white;
+    box-shadow: none;
+}
+#btn-share {
+    text-align: center;
+    display: block;
+    margin: 150px auto;
+    padding: 15px;
+    background-color: #5AB9C1;
+    border: 1px solid #5AB9C1;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 6px 0px #999;
+    font-size: 21px;
+    font-weight: bold;
+    text-shadow: none;
+}
+#btn-share:hover {
+    margin-top: 156px;
+    box-shadow: none;
+}
+
+
+/* 一覧テーブル */
+.sec-info {
+    width: fit-content;
+    margin: 60px auto;
+}
+thead {
+    color:#F0F8FF;
+    font-weight: bold;
+}
+td {
+    padding: 10px;
+    background-color: #ADCDEC;
+    border: 1px solid #F0F8FF;
+    text-align: center;
+}
+td a{
+    color: #007DC5;
+    text-decoration-line: underline;
+}
+td a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+/* 検索結果画面 */
+.search-top {
+    width: fit-content;
+    height: fit-content;
+    margin: 120px auto;
+}
+.search-result {
+    width: fit-content;
+    height: fit-content;
+    margin: 120px auto;
+}
+
+/* 入力フォーム */
+.add-container {
+    width: fit-content;
+    margin: 120px auto;
+}
+.form-parts {
+    margin: 10px auto;
+}
+.add-btn {
+    margin-top: 44px;
+    float: right;
+}
+#add-memo {
+    border: none;
+    box-shadow: 2px 2px 4px #000;
+    width: 320px;
+    height: 80px;
+}
+
+/* 詳細画面 */
+.detail-container {
+    width: fit-content;
+    height: fit-content;
+    margin: 120px auto;
+    line-height: 2em;
+}
+input[type="checkbox"]{
+	transform: scale(2);
+    margin-left: 1em;
+}
+.detail-container textarea {
+    width: 320px;
+    height: 80px;
+}
+
+/* フッター */
+footer {
+    height: 60px;
+    width: 100%;
+    background-color: #89B0D5;
+    color: aliceblue;
+    padding-top: 10px;
+}
+.notice {
+    float: left;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.copy {
+    float: right;
+    padding-right: 10px;
+}
