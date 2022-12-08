@@ -17,7 +17,9 @@ def test_index():
 
 
 # 一覧・検索機能（Takkaさん担当）
-
+@app.route("/list/")
+def bk_list():
+    #データベースつくってそこにアクセスする。
 
 
 # メモ編集機能（あとむさん担当）
