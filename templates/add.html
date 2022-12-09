@@ -4,7 +4,7 @@
     <div class="add-container">
         <h2>空き情報をシェアする</h2>
         <div class="add-form-container">
-            <form action="search.html" id="search">
+            <form action="/add" method="post">
                 <div class="form-parts form-spaceinfo">
                     <p>施設名</p>
                     <input type="text" name="space" id="add-space">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-right">
                         <p>開始時刻</p>
-                        <select name="time" id="start-time">
+                        <select name="start_time" id="start_time">
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-right">
                         <p>終了時刻</p>
-                        <select name="time" id="end-time">
+                        <select name="end_time" id="end_time">
                             <option value="11">11</option>
                             <option value="12">12</option>
                             <option value="13">13</option>
@@ -56,7 +56,7 @@
                 <div class="form-parts form-option">
                     <div class="form-left">
                         <p>収容人数</p>
-                        <input type="text" name="num" id="add-num" class="add-number">　人　
+                        <input type="text" name="capacity" id="add-capacity" class="add-capacity">　人　
                     </div>
                     <div class="form-right">
                         <p>料金（１時間あたり）</p>
@@ -66,7 +66,10 @@
                 <div class="form-parts form-memo">
                     <p>その他メモ</p>
                     <textarea name="memo" id="add-memo"></textarea>
-                    <input type="submit" value="送信" class="add-btn">
+                   
+                    <input type="submit" value="投稿する" class="add-btn">
+                    <input type="submit" value="戻る" class="return-btn">
+
                 </div>
             </form>
         </div>

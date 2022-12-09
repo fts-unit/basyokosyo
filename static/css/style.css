@@ -150,6 +150,10 @@ td a:hover{
 .form-parts {
     margin: 10px auto;
 }
+.return-btn {
+    margin-top: 44px;
+    float: right;
+}
 .add-btn {
     margin-top: 44px;
     float: right;
