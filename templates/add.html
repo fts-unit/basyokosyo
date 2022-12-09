@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="add-container">
+        <h2>空き情報をシェアする</h2>
+        <div class="add-form-container">
+            <form action="search.html" id="search">
+                <div class="form-parts form-spaceinfo">
+                    <p>施設名</p>
+                    <input type="text" name="space" id="add-space">
+                </div>
+                <div class="form-parts form-datetime">
+                    <div class="form-left">
+                        <p>日付</p>
+                        <input type="text" name="date" id="add-date">
+                    </div>
+                    <div class="form-right">
+                        <p>開始時刻</p>
+                        <select name="time" id="start-time">
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    <div class="form-right">
+                        <p>終了時刻</p>
+                        <select name="time" id="end-time">
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="form-parts form-anounce">
+                    <p>↓オプション項目</p>
+                </div>
+                <div class="form-parts form-option">
+                    <div class="form-left">
+                        <p>収容人数</p>
+                        <input type="text" name="num" id="add-num" class="add-number">　人　
+                    </div>
+                    <div class="form-right">
+                        <p>料金（１時間あたり）</p>
+                        <input type="text" name="price" id="add-price" class="add-number">　円
+                    </div>
+                </div>
+                <div class="form-parts form-memo">
+                    <p>その他メモ</p>
+                    <textarea name="memo" id="add-memo"></textarea>
+                    <input type="submit" value="送信" class="add-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="notice">
+            <p>※当サイトはユーザーの情報提供により空き情報を把握しております。</p>
+            <p>　情報の更新には誤差もありますので、最新の空き情報は各施設にお問い合わせください。</p>
+        </div>
+        <div class="copy">
+            &copy;SUNABACO
+        </div>
+    </footer>
+</body>
+</html>
+{% endblock %}
