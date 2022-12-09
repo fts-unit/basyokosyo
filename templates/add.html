@@ -6,33 +6,59 @@
         <div class="add-form-container">
             <form action="/add" method="post">
                 <div class="form-parts form-spaceinfo">
-                    <p>施設名</p>
-                    <input type="text" name="space" id="add-space">
+                    <label class="required" for="add-space">施設名</label>
+                    <input type="text" name="space" id="add-space" required>
                 </div>
                 <div class="form-parts form-datetime">
                     <div class="form-left">
-                        <p>日付</p>
-                        <input type="text" name="date" id="add-date">
+                        <label class="required" for="add-date">日付</label>
+                        <input type="text" name="date" id="add-date" required>
                     </div>
                     <div class="form-right">
-                        <p>開始時刻</p>
-                        <select name="start_time" id="start_time">
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
+                        <label class="required" for="start_time">開始時刻</label>
+                        <select name="start_time" id="start_time" required>
+                                <option value="">-</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
                         </select>
                     </div>
                     <div class="form-right">
-                        <p>終了時刻</p>
-                        <select name="end_time" id="end_time">
+                        <label class="required" for="end_time">終了時刻</label>
+                        <select name="end_time" id="end_time" required>
+                            <option value="">-</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>   
                             <option value="11">11</option>
                             <option value="12">12</option>
                             <option value="13">13</option>
@@ -44,6 +70,8 @@
                             <option value="19">19</option>
                             <option value="20">20</option>
                             <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
                         </select>
                     </div>
                 </div>
@@ -68,7 +96,7 @@
                     <textarea name="memo" id="add-memo"></textarea>
                    
                     <input type="submit" value="投稿する" class="add-btn">
-                    <input type="submit" value="戻る" class="return-btn">
+                    <input type="button" value="閉じる" onClick="history.back()"  class="return-btn">
 
                 </div>
             </form>
@@ -78,7 +106,7 @@
     <footer>
         <div class="notice">
             <p>※当サイトはユーザーの情報提供により空き情報を把握しております。</p>
-            <p>　情報の更新には誤差もありますので、最新の空き情報は各施設にお問い合わせください。</p>
+            <p>情報の更新には誤差もありますので、最新の空き情報は各施設にお問い合わせください。</p>
         </div>
         <div class="copy">
             &copy;SUNABACO
