@@ -27,18 +27,14 @@ def add_post():
     py_capacity = request.form.get("capacity")
     py_price = request.form.get("price")
     py_memo = request.form.get("memo")
-    
-    
+
+    createAt=datetime.date.today().strftime("%Y/%m/%d")
 
     conn =sqlite3.connect("bk.db")
 
     c=conn.cursor()
-    c.execute("INSERT INTO space_list values(null,?,?,?,?,?,?,?,0,null)",(py_space,py_date,py_start_time,py_end_time,py_capacity,py_price,py_memo))
-    createAt1= datetime.date.today()
-    createAt="{0:%y/%m/%d}".format(createAt1)
+    c.execute("INSERT INTO space_list values(null,?,?,?,?,?,?,?,0,?)",(py_space,py_date,py_start_time,py_end_time,py_capacity,py_price,py_memo,createAt))
     conn.commit()
-  
-
     c.close()
     return redirect("/index")
 
