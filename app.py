@@ -10,15 +10,24 @@ app = Flask(__name__)
 # トップページ（ひろせ担当）
 @app.route('/')
 def test_index():
-    return render_template('index.html')
+    dt_now = datetime.datetime.now()
+    str_today = dt_now.strftime("%Y/%m/%d")
+    # print(str_today)
+    conn = sqlite3.connect('bk.db')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM space_list WHERE date = ?;", (str_today,))
+    spaces = cur.fetchall()
+    conn.close()
+    # print(spaces)
+    return render_template('index.html', spaces=spaces)
 
-# 投稿機能（sasaさん担当）
-@app.route("index.html")
+# # 投稿機能（sasaさん担当）
+# @app.route("index.html")
 
 
-# 一覧・検索機能（Takkaさん担当）
-@app.route("/list/")
-def bk_list():
+# # 一覧・検索機能（Takkaさん担当）
+# @app.route("/list/")
+# def bk_list():
     #データベースつくってそこにアクセスする。
 
 
