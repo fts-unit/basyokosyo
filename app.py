@@ -13,19 +13,19 @@ def test_index():
     return render_template('index.html')
 
 # 投稿機能（sasaさん担当）
-@app.route("/create/")
+@app.route("/add")
 def add_get():
     return render_template("add.html")
 
 @app.route("/add",methods=["POST"])
 def add_post():
-    py_task = reguest.form.get("html_〇〇〇")
-    conn =squlite3.connect(".db")
-c=conn.cursor()
-c.execute("INSERT INTO task values(null,?)",(py_task,))
-conn.commit()
-c.close()
-return redirect("/index")
+    py_space_list = reguest.form.get("html_")
+    conn =squlite3.connect("bk.db")
+    c=conn.cursor()
+    c.execute("INSERT INTO task values(null,?)",(py_task,))
+    conn.commit()
+    c.close()
+    return redirect("/index")
 
 
 # 一覧・検索機能（Takkaさん担当）
