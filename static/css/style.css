@@ -149,7 +149,7 @@ td a:hover{
     margin: 120px auto;
 }
 .form-parts {
-    margin: 10px auto;
+    margin: 15px auto;
 }
 .return-btn {
     margin-top: 44px;
@@ -164,6 +164,9 @@ td a:hover{
     box-shadow: 2px 2px 4px #000;
     width: 320px;
     height: 80px;
+}
+#add-space {
+    width: 450px;
 }
 input[type="button"] {
     margin-left: 10px;
