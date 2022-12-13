@@ -7,12 +7,12 @@
             <form action="/add" method="post">
                 <div class="form-parts form-spaceinfo">
                     <label class="required" for="add-space">施設名</label>
-                    <input type="text" name="space" id="add-space" required>
+                    <input type="text" name="space" id="add-space" required placeholder="例）高松ホール 小会議室">
                 </div>
                 <div class="form-parts form-datetime">
                     <div class="form-left">
                         <label class="required" for="add-date">日付</label>
-                        <input type="text" name="date" id="add-date" required>
+                        <input type="date" name="date" id="add-date" required >
                     </div>
                     <div class="form-right">
                         <label class="required" for="start_time">開始時刻</label>
@@ -84,7 +84,7 @@
                 <div class="form-parts form-option">
                     <div class="form-left">
                         <p>収容人数</p>
-                        <input type="text" name="capacity" id="add-capacity" class="add-capacity">　人　
+                        <input type="text" name="capacity" id="add-capacity" class="add-capacity" placeholder="例）～10人">　人　
                     </div>
                     <div class="form-right">
                         <p>料金（１時間あたり）</p>
@@ -95,7 +95,7 @@
                 <br>
                 <div class="form-parts form-memo">
                     <p>その他メモ</p>
-                    <textarea name="memo" id="add-memo"></textarea>
+                    <textarea name="memo" id="add-memo" placeholder="例）駐車場がないので近隣の有料駐車場を利用します"></textarea>
                    
                     <input type="submit" value="投稿する" class="add-btn">
                     <input type="button" value="閉じる" onClick="history.back()"  class="return-btn">
@@ -105,15 +105,5 @@
         </div>
     </div>
 
-    <footer>
-        <div class="notice">
-            <p>※当サイトはユーザーの情報提供により空き情報を把握しております。</p>
-            <p>情報の更新には誤差もありますので、最新の空き情報は各施設にお問い合わせください。</p>
-        </div>
-        <div class="copy">
-            &copy;SUNABACO
-        </div>
-    </footer>
-</body>
-</html>
+ 
 {% endblock %}
