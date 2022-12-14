@@ -15,7 +15,7 @@ def test_index():
     # print(str_today)
     conn = sqlite3.connect('bk.db')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM space_list WHERE date = ?;", (str_today,))
+    cur.execute("SELECT * FROM space_list WHERE space_date = ?;", (str_today,))
     spaces = cur.fetchall()
     conn.close()
     # print(spaces)
