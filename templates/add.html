@@ -12,7 +12,7 @@
                 <div class="form-parts form-datetime">
                     <div class="form-left">
                         <label class="required" for="add-date">日付</label>
-                        <input type="date" name="date" id="add-date" required >
+                        <input type="text" name="date" id="add-date" required pattern="\d{4}/\d{2}/\d{2}" placeholder="例）2022/12/16">
                     </div>
                     <div class="form-right">
                         <label class="required" for="start_time">開始時刻</label>
@@ -79,16 +79,16 @@
                 <br>
                 <br>
                 <div class="form-parts form-anounce">
-                    <p>↓オプション項目</p>
+                    
                 </div>
                 <div class="form-parts form-option">
                     <div class="form-left">
                         <p>収容人数</p>
-                        <input type="text" name="capacity" id="add-capacity" class="add-capacity" placeholder="例）～10人">　人　
+                        <input type="text" name="capacity" id="add-capacity" class="add-capacity" placeholder="例）～10人">
                     </div>
                     <div class="form-right">
-                        <p>料金（１時間あたり）</p>
-                        <input type="text" name="price" id="add-price" class="add-number">　円
+                        <p>料金</p>
+                        <input type="text" name="price" id="add-price" class="add-number" placeholder="例）1時間　800円">
                     </div>
                 </div>
                 <br>
