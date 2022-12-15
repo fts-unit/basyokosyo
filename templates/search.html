@@ -63,7 +63,7 @@
             </thead>
             {% for space in spaces %}
             <tr>
-                <td>{{ space[1] }}</td>
+                <td><a href="https://www.google.co.jp/maps/search/{{ space[1] }}" target="_blank" rel="noopener noreferrer">{{ space[1] }}</a></td>
                 <td>{{ space[3] }}時～{{ space[4] }}時</td>
                 <td>{% if space[5] %}{{ space[5] }}{% endif %}</td>
                 <td>{% if space[6] %}{{ space[6] }}{% endif %}</td>
