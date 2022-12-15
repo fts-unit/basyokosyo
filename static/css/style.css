@@ -22,6 +22,10 @@ header {
     font-size: 32px;
     font-weight: bold;
 }
+.logo img {
+    margin-top: 3px;
+    height: 52px;
+}
 .menu {
     float: right;
     margin-right: 20px;
@@ -133,6 +137,13 @@ td a:hover{
 }
 
 /* 検索結果画面 */
+.to-top-link {
+    float: right;
+}
+.to-top-link a {
+    color: blue;
+    text-decoration: underline;
+}
 .search-top {
     width: fit-content;
     height: fit-content;
@@ -252,4 +263,6 @@ footer {
 .error404 a {
     display: block;
     float: right;
+    color: blue;
+    text-decoration: underline;
 }

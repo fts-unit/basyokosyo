@@ -16,7 +16,7 @@ def test_index():
     # print(str_today)
     conn = sqlite3.connect('bk.db')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM space_list WHERE space_date = ?;", (str_today,))
+    cur.execute("SELECT * FROM space_list WHERE space_date = ? AND reserved = 0;", (str_today,))
     spaces = cur.fetchall()
     conn.close()
     # print(spaces)
@@ -46,34 +46,10 @@ def add_post():
     c.execute("INSERT INTO space_list values(null,?,?,?,?,?,?,?,0,?)",(py_space,py_date,py_start_time,py_end_time,py_capacity,py_price,py_memo,createAt))
     conn.commit()
     c.close()
-    return redirect("/index")
+    return redirect("/")
 
 
-# 一覧・検索機能（Takkaさん担当）
-<<<<<<< HEAD
-@app.route("/list/")
-def bk_list():
-    conn= sqlite3.connect("bk.db")
-    c= conn.cursor()
-    c.execute("SELECT * FROM space_list")
-    bk_list_py= []
-    for row in c.fetchall():
-        bk_list_py.append({'ID':row[0],'name':row[1],'space_date':row[2],'start_time':row[3],'end_time':row[4],'capacity':row[5],'price':row[6],'memo':row[7],'reserved':row[8],'createAt':row[9]})
-    c.close()
-    # print(bk_list_py)
-    return render_template("list.html",data= bk_list_py)
-
-@app.route("/list/" ,methods= ["POST"])
-def seek():
-    book_date= request.form.get("date")
-    book_time= request.form.get("time")
-    conn= sqlite3.connect("bk.db")
-    c= conn.cursor()
-    c.execute("SELECT * FROM space_list WHERE space_date= ? AND start_time= ?",(book_date,book_time))
-    seek_date= c.fetchall()
-    conn.close()
-    return render_template("list.html",date= seek_date)
-=======
+# 一覧・検索機能（Takkaさん担当→ひろせ修正）
 @app.route('/search')
 def search():
     dt_now = datetime.datetime.now()
@@ -82,15 +58,14 @@ def search():
     int_time = request.args.get("time", default=10, type=int)
     conn = sqlite3.connect('bk.db')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM space_list WHERE space_date = ? AND start_time <= ? AND end_time > ?;", (str_date,int_time,int_time))
+    cur.execute("SELECT * FROM space_list WHERE space_date = ? AND start_time <= ? AND end_time > ? AND reserved = 0;", (str_date,int_time,int_time))
     spaces = cur.fetchall()
     conn.close()
     # print(spaces)
     return render_template('search.html', spaces=spaces, date=str_date, time=int_time)
->>>>>>> 6e8f1f942fb13bccbccea06978c1c9ac9738d592
 
 
-# メモ編集機能（あとむさん担当）
+# メモ編集機能（あとむさん担当→ひろせ修正）
 @app.route('/detail/<id>')
 def detail_get(id):
     conn = sqlite3.connect('bk.db')

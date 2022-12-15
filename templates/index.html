@@ -7,11 +7,12 @@
                 <form action="/search" id="search">
                     <div class="form-left">
                         <p>使用したい日</p>
-                        <input type="text" name="date" id="search-date">
+                        <input type="text" name="date" id="search-date" pattern="\d{4}/\d{2}/\d{2}">
                     </div>
                     <div class="form-right">
                         <p>開始時刻</p>
                         <select name="time" id="search-time">
+                            <option value="">-</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -47,6 +48,7 @@
 
     <div class="sec-info">
         <h2>今日の空きスペース情報</h2>
+        {% if spaces %}
         <table>
             <thead>
                 <td>施設名</td>
@@ -75,5 +77,9 @@
             </tr>
             {% endfor %}
         </table>
+        {% else %}
+        <br>
+        <p>該当する情報がありません。</p>
+        {% endif %}
     </div>
 {% endblock %}

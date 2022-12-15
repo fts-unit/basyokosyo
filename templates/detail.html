@@ -10,7 +10,7 @@
         <p>料金　　　　：　{% if space[6] %}{{ space[6] }}{% endif %}</p>
         <p>情報提供日　：　{{ space[9] }}</p>
         <form action="/detail/{{ space[0] }}" method="post">
-            <p>メモ（予約する場合はお礼を追記しましょう♪）</p>
+            <p>メモ</p>
             <textarea name="memo" id="edit-memo">{% if space[7] %}{{ space[7] }}{% endif %}</textarea>
             <br>
             <strong>予約済みを報告する場合はチェック→</strong><input type="checkbox" name="done" id="edit-done" value="done" {% if space[8] == 1 %} checked {% endif %}>
