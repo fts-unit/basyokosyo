@@ -49,7 +49,7 @@ def add_post():
     c.close()
     url_date = urllib.parse.quote(py_date)
     
-    path = "search?date=" + url_date + "&time=" + py_start_time
+    path = "/search?date=" + url_date + "&time=" + py_start_time
 
     return redirect(path)
 
@@ -91,8 +91,16 @@ def detail_post(id):
     cur = conn.cursor()
     cur.execute("UPDATE space_list SET memo = ?, reserved = ? WHERE id = ?;", (str_memo, int_check, id))
     conn.commit()
+    cur.execute("SELECT * FROM space_list WHERE ID = ?;", (id,))
+    space = cur.fetchone()
+    py_date = space[2]
+    py_start_time = space[3]
     conn.close()
-    return redirect('/search')
+
+    url_date = urllib.parse.quote(py_date)
+    path = "/search?date=" + url_date + "&time=" + str(py_start_time)
+
+    return redirect(path)
 
 # エラーの表示（４０４エラー）
 @app.errorhandler(404)
