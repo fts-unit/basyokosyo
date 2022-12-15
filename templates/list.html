@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="search-top">
+        <div class="search-form-container">
+        <form action="/list/" method="post">
+            <div class="form-left">
+                <p>日付</p>
+                <input type="text" name="date" id="search-date">
+            </div>
+            <div class="form-right">
+                <p>開始時刻</p>
+                <select name="time" id="search-time">
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <input type="submit" value="検索">
+            </div>
+        </form>
+        </div>
+    </div>
+    <br>
+<div class="search-result">
+<table border="1">
+    <thead>
+        <td>施設名</td>
+        <td>日付</td>
+        <td>開始時間</td>
+        <td>終了時間</td>
+        <td>収容人数</td>
+        <td>値段[円]</td>
+        <td>メモ</td>
+        <td>予約済み</td>
+        <td>情報提供日</td>
+    </thead>
+        {% for ls in data %}
+            
+            <tr>
+            <!-- <td>{{ls[date]}}</td> -->
+
+            <td>{{ls["name"]}}</td>
+            <td>{{ls["space_date"]}}</td>
+            <td>{{ls["start_time"]}}</td>
+            <td>{{ls["end_time"]}}</td>
+            <td>{{ls["capacity"]}}</td>
+            <td>{{ls["price"]}}</td>
+            <td>{{ls["memo"]}}</td>
+            <td><a href="#">報告</a></td>
+            <td>{{ls["createAt"]}}</td>
+            
+            </tr>
+        {% endfor %}
+    
+</table>
+</div>
+{% endblock %}
