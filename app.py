@@ -50,7 +50,6 @@ def add_post():
 
 
 # 一覧・検索機能（Takkaさん担当）
-<<<<<<< HEAD
 @app.route("/list/")
 def bk_list():
     conn= sqlite3.connect("bk.db")
@@ -73,7 +72,6 @@ def seek():
     seek_date= c.fetchall()
     conn.close()
     return render_template("list.html",date= seek_date)
-=======
 @app.route('/search')
 def search():
     dt_now = datetime.datetime.now()
@@ -87,7 +85,6 @@ def search():
     conn.close()
     # print(spaces)
     return render_template('search.html', spaces=spaces, date=str_date, time=int_time)
->>>>>>> 6e8f1f942fb13bccbccea06978c1c9ac9738d592
 
 
 # メモ編集機能（あとむさん担当）
