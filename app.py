@@ -5,6 +5,7 @@ from flask import redirect
 from flask import session
 import sqlite3
 import datetime
+import urllib
 
 app = Flask(__name__)
 
@@ -46,7 +47,11 @@ def add_post():
     c.execute("INSERT INTO space_list values(null,?,?,?,?,?,?,?,0,?)",(py_space,py_date,py_start_time,py_end_time,py_capacity,py_price,py_memo,createAt))
     conn.commit()
     c.close()
-    return redirect("/")
+    url_date = urllib.parse.quote(py_date)
+    
+    path = "search?date=" + url_date + "&time=" + py_start_time
+
+    return redirect(path)
 
 
 # 一覧・検索機能（Takkaさん担当→ひろせ修正）
