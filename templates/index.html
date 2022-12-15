@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="sec-search">
+        <div class="search-container">
+            <h1>使わなかった空きスペースはシェアしよう！！</h1>
+            <div class="search-form-container">
+                <form action="/search" id="search">
+                    <div class="form-left">
+                        <p>使用したい日</p>
+                        <input type="text" name="date" id="search-date">
+                    </div>
+                    <div class="form-right">
+                        <p>開始時刻</p>
+                        <select name="time" id="search-time">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
+                        <input type="submit" value="検索">
+                    </div>
+                </form>
+            </div>
+            <a href="/add" id="btn-share">空き情報をシェアする</a>
+        </div>
+    </div>
+
+    <div class="sec-info">
+        <h2>今日の空きスペース情報</h2>
+        <table>
+            <thead>
+                <td>施設名</td>
+                <td>空き時間</td>
+                <td>収容人数</td>
+                <td>料金</td>
+                <td>メモ</td>
+                <td>情報提供日</td>
+                <td>予約</td>
+            </thead>
+            {% for space in spaces %}
+            <tr>
+                <td>{{ space[1] }}</td>
+                <td>{{ space[3] }}時～{{ space[4] }}時</td>
+                <td>{% if space[5] %}{{ space[5] }}{% endif %}</td>
+                <td>{% if space[6] %}{{ space[6] }}{% endif %}</td>
+                <td>{% if space[7] %}{{ space[7] }}{% endif %}</td>
+                <td>{{ space[9] }}</td>
+                <td>
+                    {% if space[8] == 0 %}
+                    <a href="/detail/{{ space[0] }}">予約済みを報告</a>
+                    {% else %}
+                    済
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

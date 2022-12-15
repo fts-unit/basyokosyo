@@ -68,6 +68,7 @@ input[type="text"], select{
 }
 #search-date {
     margin-top: 1px;
+    width: 180px;
 }
 #search-time {
     width: 4em;
@@ -236,4 +237,19 @@ footer {
 .copy {
     float: right;
     padding-right: 10px;
+}
+
+
+/* 404 */
+.error404 {
+    width: fit-content;
+    height: fit-content;
+    margin: 120px auto;
+}
+.error404 img {
+    height: 400px;
+}
+.error404 a {
+    display: block;
+    float: right;
 }
