@@ -59,7 +59,7 @@
                 <td>料金</td>
                 <td>メモ</td>
                 <td>情報提供日</td>
-                <td>予約</td>
+                <td></td>
             </thead>
             {% for space in spaces %}
             <tr>
@@ -71,9 +71,9 @@
                 <td>{{ space[9] }}</td>
                 <td>
                     {% if space[8] == 0 %}
-                    <a href="/detail/{{ space[0]}}">予約済みを報告</a>
+                    <a href="/detail/{{ space[0] }}">メモを編集／<br>予約済を報告</a>
                     {% else %}
-                    済
+                    予約済
                     {% endif %}
                 </td>
             </tr>
